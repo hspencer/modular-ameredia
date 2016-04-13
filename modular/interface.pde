@@ -41,4 +41,10 @@ void drawNumbers(float x, float y) {
     offscreen.popMatrix();
     break;
   }
+
+  if (yellowDot == 1) {
+    offscreen.textFont(bold);
+    offscreen.textSize(24);
+    offscreen.text(prop, x, y + 3*h);
+  }
 }

@@ -33,6 +33,7 @@ void checkKeyboard() {
 }
 
 void keyPressed() {
+
   switch(key) {
   case 'c':
     ks.toggleCalibration();
@@ -81,8 +82,10 @@ void keyPressed() {
     break;
 
   case ' ':
-    if (yellowDot == 1) yellowDot = 0;
-    if (yellowDot == 0) yellowDot = 1;
+    yellowDot++;
+    yellowDot %= 2;
+    //if (yellowDot == 1) yellowDot = 0;
+    //if (yellowDot == 0) yellowDot = 1;
     break;
 
   case 'r':
@@ -105,6 +108,7 @@ void keyPressed() {
     }
     break;
   }
+
   switch(multiplier) {
   case 0:
     multiplierVal = 1;
@@ -112,5 +116,10 @@ void keyPressed() {
   case 1:
     multiplierVal = 10;
     break;
+  }
+
+  if (escena == 0) {
+    num = constrain(num, 1, 10);
+    mult = constrain(mult, 0, 10);
   }
 }

@@ -21,7 +21,7 @@ PGraphics offscreen;
 
 void setup() {
   fullScreen(P3D);
-  //size(1920, 1080, P3D);
+  // size(1920, 1080, P3D);
   ks = new Keystone(this);
   surface = ks.createCornerPinSurface(displayWidth, displayHeight, 20);
   offscreen = createGraphics(displayWidth, displayHeight, P3D);
@@ -39,7 +39,7 @@ void setup() {
 void draw() {
 
 
-  float m = width / 10; // margen horizontal
+  float m = width / 24; // margen horizontal
 
   float r = height * .47;
   float x = m + r;
@@ -68,20 +68,21 @@ void draw() {
       recursive(x, y, r * (PI/10), constrain(num, 1, 10), constrain(mult, 0, 10));
       offscreen.textFont(bold);
       offscreen.textSize(72);
-      offscreen.text("§", PI * m + 2 * r, height/2);
+      offscreen.text("§", PI * m + 2.2 * r, height/2);
       offscreen.textFont(font);
       offscreen.textSize(48);
-      offscreen.text(num + " ~ " + mult+"n", PI * m + 2 * r, height/2 + 72);
+      offscreen.text(num + " ~ " + mult+"n", PI * m + 2.2 * r, height/2 + 72);
 
 
       offscreen.textFont(bold);
       offscreen.textSize(24);
       offscreen.fill(orange);
+      
       switch(permutator) {
 
       case 0:
         offscreen.pushMatrix();
-        offscreen.translate(PI * m + 2 * r - 100, height/2 + 55);
+        offscreen.translate(PI * m + 2.2 * r - 100, height/2 + 55);
         // offscreen.line(-l, y - v/2, l, y - v/2);
         offscreen.ellipse(0, 0, 15, 15);
         offscreen.popMatrix();
@@ -89,7 +90,7 @@ void draw() {
 
       case 1:
         offscreen.pushMatrix();
-        offscreen.translate(PI * m + 2 * r + 100, height/2 + 55);
+        offscreen.translate(PI * m + 2.2 * r + 100, height/2 + 55);
         // offscreen.line(-l, y - v/2, l, y - v/2);
         offscreen.ellipse(0, 0, 15, 15);
         offscreen.popMatrix();
@@ -99,7 +100,7 @@ void draw() {
 
     case 1:
       modular(x, y, r, num, mult);
-      drawNumbers(PI * m + 2 * r, height/2);
+      drawNumbers(PI * m + 2.2 * r, height/2);
       break;
     }
   }

@@ -34,8 +34,8 @@ void setup() {
   Serial.begin(9600);
 
   //Bluetooth//
-  bluetooth.begin(115200);  // The Bluetooth Mate defaults to 115200bps
-  bluetooth.print("$$$");  // Enter command mode
+  bluetooth.begin(115200);  // The Bluetooth Mate defaults to 115200 bps
+  bluetooth.print("$$$");   // Enter command mode
   delay(100);  // Short delay, wait for the Mate to send back CMD
   bluetooth.println("U,9600,N");  // Temporarily Change the baudrate to 9600, no parity
   // 115200 can be too fast at times for NewSoftSerial to relay the data reliably
@@ -65,7 +65,6 @@ void setup() {
 }
 
 void loop() {
-
 
   // if we get a valid byte, read analog ins:
   if (bluetooth.available() > 0) {
